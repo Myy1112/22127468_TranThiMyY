@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  mysql_db:
+    image: mysql/mysql-server:8.0
+    container_name: task_mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password 
+      MYSQL_DATABASE: taskdb
+      MYSQL_INITDB_SKIP_TZINFO: 1 
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    # Đảm bảo MySQL đã sẵn sàng trước khi API kết nối
+    healthcheck: 
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+      interval: 10s
+    
+  taskapi:
+    build:
+      context: . 
+      dockerfile: Dockerfile
+    container_name: task_api
+    restart: always
+    ports:
+      - "5001:8080"
+    # Chỉ khởi động sau khi DB Healthy
+    depends_on: 
+      mysql_db:
+        condition: service_healthy 
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development 
+
+volumes:
+  mysql_data:
