@@ -7,6 +7,8 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password 
+      # Allow root to connect from other containers (container network hosts)
+      MYSQL_ROOT_HOST: '%'
       MYSQL_DATABASE: taskdb
       MYSQL_INITDB_SKIP_TZINFO: 1 
     volumes:

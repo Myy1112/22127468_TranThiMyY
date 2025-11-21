@@ -2725,11 +2725,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ymytr/TaskApi/TaskApi.csproj",
+      "projectUniqueName": "/Users/ymytr/Task/TaskApi/TaskApi.csproj",
       "projectName": "TaskApi",
-      "projectPath": "/Users/ymytr/TaskApi/TaskApi.csproj",
+      "projectPath": "/Users/ymytr/Task/TaskApi/TaskApi.csproj",
       "packagesPath": "/Users/ymytr/.nuget/packages/",
-      "outputPath": "/Users/ymytr/TaskApi/obj/",
+      "outputPath": "/Users/ymytr/Task/TaskApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ymytr/.nuget/NuGet/NuGet.Config"
