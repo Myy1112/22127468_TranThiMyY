@@ -4,11 +4,11 @@
 Dự án là một ứng dụng quản lý task cá nhân (Personal Task Manager) được xây dựng với kiến trúc Client-Server, cho phép người dùng thực hiện các thao tác quản lý công việc cơ bản.
 
 ### Chức năng chính
-* [cite_start]**Thêm** task mới (tên, ngày hết hạn, trạng thái mặc định "Đang làm")[cite: 34].
-* [cite_start]**Hiển thị** danh sách task[cite: 35].
-* [cite_start]**Cập nhật** trạng thái hoặc nội dung task[cite: 36].
-* [cite_start]**Xóa** task[cite: 37].
-* [cite_start]**Lọc** danh sách task theo trạng thái (Đang làm / Hoàn thành)[cite: 5, 38].
+* **Thêm** task mới (tên, ngày hết hạn, trạng thái mặc định "Đang làm")[cite: 34].
+* **Hiển thị** danh sách task[cite: 35].
+* **Cập nhật** trạng thái hoặc nội dung task[cite: 36].
+* **Xóa** task[cite: 37].
+* **Lọc** danh sách task theo trạng thái (Đang làm / Hoàn thành)[cite: 5, 38].
 
 ### Công nghệ sử dụng
 | Thành phần | Công nghệ | Chi tiết |
@@ -69,18 +69,18 @@ Cần cài đặt **Docker** và **Docker Compose** trên máy tính.
 ## 3. Cấu hình chi tiết (DB và API)
 
 ### 3.1. Cấu hình Database
-* [cite_start]**Host API truy cập**: `mysql_db` (Tên service trong Docker Compose [cite: 1]).
-* [cite_start]**Cổng**: `3306`[cite: 1, 2].
-* [cite_start]**Database Name**: `taskdb`[cite: 1, 2].
-* [cite_start]**User**: `root`[cite: 1, 2].
-* [cite_start]**Password**: `password`[cite: 1, 2].
+* **Host API truy cập**: `mysql_db` (Tên service trong Docker Compose [cite: 1]).
+* **Cổng**: `3306`[cite: 1, 2].
+* **Database Name**: `taskdb`[cite: 1, 2].
+* **User**: `root`[cite: 1, 2].
+* **Password**: `password`[cite: 1, 2].
 
 (Các thông số này được định nghĩa trong `TaskApi/docker-compose.yml` và `TaskApi/appsettings.json`).
 
 ### 3.2. Cấu hình Web API
-* [cite_start]**Cổng API bên trong Docker**: `8080`[cite: 1].
-* [cite_start]**Cổng API bên ngoài (Local)**: `5001`[cite: 1].
-* [cite_start]**Base URL cho Frontend**: `http://localhost:5001/api/Tasks`[cite: 6].
-* [cite_start]**Cổng chạy Debug/Visual Studio (Không dùng Docker)**: `http://localhost:5252` (HTTP) và `https://localhost:7041` (HTTPS)[cite: 3, 4].
+* **Cổng API bên trong Docker**: `8080`[cite: 1].
+* **Cổng API bên ngoài (Local)**: `5001`[cite: 1].
+* **Base URL cho Frontend**: `http://localhost:5001/api/Tasks`[cite: 6].
+* **Cổng chạy Debug/Visual Studio (Không dùng Docker)**: `http://localhost:5252` (HTTP) và `https://localhost:7041` (HTTPS)[cite: 3, 4].
 
 **Ghi chú:** Frontend đã được cấu hình cố định để gọi API tại `http://localhost:5001`.
